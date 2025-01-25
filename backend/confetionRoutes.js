@@ -5,10 +5,10 @@ const router = express.Router();
 
 // POST: Submit a confession
 router.post("/", async (req, res) => {
-  const { message, anonymityLevel } = req.body;
+  const { message } = req.body;
   console.log(req.body);
 
-  if (!message || !anonymityLevel) {
+  if (!message) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
