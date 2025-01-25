@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 
   try {
-    const newConfession = new Confession({ message, anonymityLevel });
+    const newConfession = new Confession({ message });
     const savedConfession = await newConfession.save();
     res.status(201).json(savedConfession);
   } catch (err) {
